@@ -1,3 +1,5 @@
+import EventEmitter from "events"; // Libreria para manejar eventos
+
 import AuthRepository from "../repository/auth.repository.js";
 
 import BuildLoginChain from "./validators/login.chain.js";
@@ -23,6 +25,8 @@ class AuthService {
                 email,
                 password: hashedPassword
             });
+            const eventLogin = new EventEmitter(); // Crear el emisor de eventos
+            eventLogin.emit("userRegistred", newAuth); // Emite el evento cuando se registro el usuario
             console.log("Se registro el usuario correctamente.");
             return newAuth;
         } catch (error) {
