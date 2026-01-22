@@ -1,4 +1,5 @@
 import EventEmitter from "events"; // Libreria para manejar eventos
+import axios from "axios";
 
 import AuthRepository from "../repository/auth.repository.js";
 
@@ -25,6 +26,14 @@ class AuthService {
                 email,
                 password: hashedPassword
             });
+
+            const userService = process.env.USER_SERVICE_URL;
+            try {
+                await axios.post(userService, newAuth);
+                console.log("Envio evento a otro microservicio");
+            } catch (error) {
+                console.error("No se pudo realizar", error);
+            }
             const eventLogin = new EventEmitter(); // Crear el emisor de eventos
             eventLogin.emit("userRegistred", newAuth); // Emite el evento cuando se registro el usuario
             console.log("Se registro el usuario correctamente.");
