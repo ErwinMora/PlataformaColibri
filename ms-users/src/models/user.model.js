@@ -4,9 +4,7 @@ const userSchema = new mongoose.Schema({
     nombre: { type: String, required: true },
     apellidos: { type: String, required: true },
     fechanacimiento: { type: Date, required: true },
-    telefono: { type: String, required: true, unique: true },
-    placas: { type: String, required: true, unique: true },
-    ine: { type: String, required: true, unique: true }
+    telefono: { type: String, required: true, unique: true }
 });
 
 export default mongoose.model("User", userSchema);
