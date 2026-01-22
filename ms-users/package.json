@@ -1,6 +1,7 @@
 {
   "name": "ms-users",
   "version": "1.0.0",
+  "type": "module",
   "description": "Microservicio de Usuarios",
   "main": "index.js",
   "scripts": {
