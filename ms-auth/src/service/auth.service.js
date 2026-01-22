@@ -1,4 +1,3 @@
-import EventEmitter from "events"; // Libreria para manejar eventos
 import axios from "axios";
 
 import AuthRepository from "../repository/auth.repository.js";
@@ -34,8 +33,6 @@ class AuthService {
             } catch (error) {
                 console.error("No se pudo realizar", error);
             }
-            const eventLogin = new EventEmitter(); // Crear el emisor de eventos
-            eventLogin.emit("userRegistred", newAuth); // Emite el evento cuando se registro el usuario
             console.log("Se registro el usuario correctamente.");
             return newAuth;
         } catch (error) {
