@@ -1,4 +1,3 @@
-import EventEmitter from "events"; // Libreria para manejar eventos
 import axios from "axios";
 
 import AuthRepository from "../repository/auth.repository.js";

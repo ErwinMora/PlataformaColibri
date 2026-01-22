@@ -38,10 +38,11 @@ Este es el microservicio de **Autenticación (ms-auth)** de la Plataforma Colibr
 
 ## Dependencias
 
-- JWT
+- Axios
 - Express
-- Bcrypt
 - Dotenv
+- Bcrypt
+- JWT
 - CORS
 - Mongoose
 - Express-rate-limit
