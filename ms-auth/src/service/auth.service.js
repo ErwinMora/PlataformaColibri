@@ -39,14 +39,8 @@ class AuthService {
             const result = await this.loginValidators.validate({ email, password });
             const token = generateToken(result.user);
 
-            return {
-                token,
-                user: {
-                    id: result.user.id,
-                    email: result.user.email,
-                    role: result.user.role
-                }
-            }
+            /* return { token, user: { id: result.user.id, email: result.user.email, role: result.user.role } } */
+            return { token, msg: "Inicio de sesión exitoso" }
         } catch (error) {
             console.error("Error al iniciar sesión", error);
             throw error;
