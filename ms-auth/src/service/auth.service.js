@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import AuthRepository from "../repository/auth.repository.js";
 
 import BuildLoginChain from "./validators/login.chain.js";
@@ -21,22 +19,15 @@ class AuthService {
             await this.registerValidators.validate({ email, password });
 
             const hashedPassword = await encryptPassword(password); // Encriptar contraseña
-            const newAuth = await AuthRepository.createAuth({ // Crear nuevo usuario
+            await AuthRepository.createAuth({ // Crear nuevo usuario
                 email,
                 password: hashedPassword
             });
-
-            const userService = process.env.USER_SERVICE_URL;
-            try {
-                await axios.post(userService, newAuth);
-                console.log("Envio evento a otro microservicio");
-            } catch (error) {
-                console.error("No se pudo realizar", error);
-            }
             console.log("Se registro el usuario correctamente.");
-            return newAuth;
+            const msg = "Se registro el usuario correctamente.";
+            return msg;
         } catch (error) {
-            console.error("Error al registrar el usuario", error);
+            console.error("Error al registrar el usuario el correo ya esta siendo usado.");
             throw error;
         }
     }
