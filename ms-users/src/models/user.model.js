@@ -7,4 +7,4 @@ const userSchema = new mongoose.Schema({
     telefono: { type: String, required: true, unique: true }
 });
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("Auth", userSchema);
