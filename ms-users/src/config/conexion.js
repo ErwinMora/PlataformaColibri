@@ -2,7 +2,7 @@ import dotenv from "dotenv"; // Libreria para manejar las variables de entorno
 import mongoose from "mongoose"; // Libreria para implementar MongoDB
 
 dotenv.config(); // Cargar variables de entorno
-const conn = process.env.MONGO_URI; // Cadane de conexión a la base de datos
+const conn = process.env.MONGO_URI; // Cadana de conexión a la base de datos
 
 const conexion = async () => {
     if (!conn) {
