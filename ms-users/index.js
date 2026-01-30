@@ -9,7 +9,7 @@ dotenv.config(); // Cargar variables de entorno
 conexion(); // Conexión a la base de datos
 const app = express(); // Crear la instancia de la apliación express
 const port = process.env.PORT || 3000; // Puerto del servidor
-const uri = process.env.URI_CREATE;
+const uri = process.env.URI_USER;
 
 app.use(express.json()); // Habilitar Json para las peticiones
 app.use(CORS()); // Habilitamos CORS para las peticiones
