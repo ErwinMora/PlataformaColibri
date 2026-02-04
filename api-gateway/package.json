@@ -1,8 +1,8 @@
 {
-  "name": "ms-auth",
+  "name": "api-gateway",
   "version": "1.0.0",
   "type": "module",
-  "description": "Microservicio de Autentificación Plataforma Colibri",
+  "description": "Api Gateway para Plataforma Colibri",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,13 +10,11 @@
   "author": "INSOFT",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
+    "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.2.1",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.1.5",
     "winston": "^3.19.0",
     "winston-mongodb": "^7.0.1"
   }
