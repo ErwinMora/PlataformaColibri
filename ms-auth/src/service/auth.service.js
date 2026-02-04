@@ -17,7 +17,6 @@ class AuthService {
         try {
             // Validación con Chain of Responsibility
             await this.registerValidators.validate({ email, password });
-
             const hashedPassword = await encryptPassword(password); // Encriptar contraseña
             await AuthRepository.createAuth({ // Crear nuevo usuario
                 email,

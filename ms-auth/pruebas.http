@@ -1,0 +1,8 @@
+// Registro de usuarios
+POST http://localhost:3001/api/ms-auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "erwin@gmail.com",
+    "password": "1234"
+}
